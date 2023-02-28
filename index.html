@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="从技术的角度做管理">
 <meta property="og:description" content="我敢流浪也就不怕迷路疲惫危险">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Peigen Lee">
+<meta property="article:author" content="培根">
 <meta property="article:tag" content="Peigen, 培根, 李培跃, 易极付, 支付宝, Paycore">
 <meta name="twitter:card" content="summary">
 
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>从技术的角度做管理 - Peigen、培根、李培跃 都是我</title>
+  <title>从技术的角度做管理 - 我思、我想、故我在</title>
   
 
 
@@ -101,7 +101,7 @@
       <h1 class="site-title">从技术的角度做管理</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">Peigen、培根、李培跃 都是我</p>
+      <p class="site-subtitle" itemprop="description">我思、我想、故我在</p>
   </div>
 
   <div class="site-nav-right">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -170,11 +170,162 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://peigen.info/2023/02/27/2023/2023-2-27-Raspberry-Pi-Study-note-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="培根">
+      <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="从技术的角度做管理">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/27/2023/2023-2-27-Raspberry-Pi-Study-note-install/" class="post-title-link" itemprop="url">树莓派学习笔记（一）---安装篇</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-27 00:00:00 / 修改时间：16:15:02" itemprop="dateCreated datePublished" datetime="2023-02-27T00:00:00+08:00">2023-02-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一、U盘制作"><a href="#一、U盘制作" class="headerlink" title="一、U盘制作"></a>一、U盘制作</h2><p>鄙人手头的是树莓派4B 8GB版本。一切都以此为准。</p>
+<p>U盘制作有官方文档，请阅读<a target="_blank" rel="noopener" href="https://www.raspberrypi.com/documentation/computers/getting-started.html">Raspberry Pi Documentation - Getting started</a></p>
+<p>如果懒得看英文文档，可以参考如下步骤：</p>
+<h3 id="1、下载个Raspberry-Pi-Imager"><a href="#1、下载个Raspberry-Pi-Imager" class="headerlink" title="1、下载个Raspberry Pi Imager"></a>1、下载个<a target="_blank" rel="noopener" href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a></h3><ul>
+<li>可以选择不同操作系统版本</li>
+<li><img src="/uploads/RaspberryPi/image-20230223225734340.png" alt="image-20230223225734340"></li>
+</ul>
+<h3 id="2、下载Operating-system-images-–-Raspberry-Pi-OS"><a href="#2、下载Operating-system-images-–-Raspberry-Pi-OS" class="headerlink" title="2、下载Operating system images – Raspberry Pi OS"></a>2、下载<a target="_blank" rel="noopener" href="https://www.raspberrypi.com/software/operating-systems/">Operating system images – Raspberry Pi OS</a></h3><ul>
+<li>这里有各种各样的版本，当前的版本都是基于Debian 11 bulleye</li>
+<li><img src="/uploads/RaspberryPi/image-20230223230430537.png" alt="image-20230223230430537"><ul>
+<li>这里我选择的是64位的版本，还有其他设备也支持64位的系统</li>
+<li>从文件大小可以看出来Lite版比Desktop版要烧很多内容，我选Desktop版，SD卡够用</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、烧制SD卡"><a href="#3、烧制SD卡" class="headerlink" title="3、烧制SD卡"></a>3、烧制SD卡</h3><h4 id="3-1-选择操作系统"><a href="#3-1-选择操作系统" class="headerlink" title="3.1 选择操作系统"></a>3.1 选择操作系统</h4><ul>
+<li><img src="/uploads/RaspberryPi/image-20230223232458830.png" alt="image-20230223232458830"><ul>
+<li>因为我是自己下载的系统镜像，这里选择自定义镜像</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-选择存储卡"><a href="#3-2-选择存储卡" class="headerlink" title="3.2 选择存储卡"></a>3.2 选择存储卡</h4><ul>
+<li><img src="/uploads/RaspberryPi/image-20230223232816075.png" alt="image-20230223232816075"></li>
+</ul>
+<h4 id="3-3-选择高级设置"><a href="#3-3-选择高级设置" class="headerlink" title="3.3 选择高级设置"></a>3.3 选择高级设置</h4><ul>
+<li><img src="/uploads/RaspberryPi/image-20230223232901288.png" alt="image-20230223232901288"></li>
+<li><img src="/uploads/RaspberryPi/image-20230223232914390.png" alt="image-20230223232914390"></li>
+<li>在这里设置主机名，用户名，打开SSH服务会省事不少</li>
+</ul>
+<h4 id="4、点【烧录】"><a href="#4、点【烧录】" class="headerlink" title="4、点【烧录】"></a>4、点【烧录】</h4><p>此刻，拔出读卡器的TF卡，插入你的树莓派，插上电源，起飞……只是要飞的久一点，大约5分钟吧。</p>
+<h2 id="二、系统设置"><a href="#二、系统设置" class="headerlink" title="二、系统设置"></a>二、系统设置</h2><ul>
+<li><p>静态IP</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/dhcpcd.conf</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新增</span></span><br><span class="line">interface eth0</span><br><span class="line">static ip_address=192.168.31.200/24</span><br><span class="line">static routers=192.168.31.1</span><br><span class="line">static domain_name_servers=192.168.31.1 8.8.8.8</span><br></pre></td></tr></table></figure></li>
+<li><p>换源</p>
+<ul>
+<li><p>树莓派源</p>
+<pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/apt</span><br><span class="line">sudo mv sources.list sources.list.bak</span><br><span class="line">sudo vi sources.list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ARM64(64位系统)</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">deb-src http://mirrors.ustc.edu.cn/debian bullseye main contrib non-free</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">deb-src http://mirrors.ustc.edu.cn/debian bullseye-updates main contrib non-free</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian-security bullseye-security main contrib non-free</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">deb-src http://mirrors.ustc.edu.cn/debian-security/ bullseye-security main non-free contrib</span></span><br><span class="line"></span><br><span class="line">cd sources.list.d/</span><br><span class="line">sudo mv raspi.list raspi.list.bak</span><br><span class="line">sudo vi raspi.list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ARM64(64位系统)</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ bullseye main</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">deb-src https://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ bullseye main</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9165938D90FDDD2E</span><br><span class="line">sudo apt update &amp; apt upgrade</span><br><span class="line">    </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装基础软件</span></span><br><span class="line">sudo apt install lrzsz nmap expect net-tools lsof telnet zip unzip git axel traceroute zsh ifconfig curl gnupg lsb-release xrdp samba vim</span><br><span class="line">    </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">文件夹</span></span><br><span class="line">mkdir soft dev</span><br><span class="line">mkdir ~/dev/workspace</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>更改Hosts</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">登录网站：https://www.ipaddress.com</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在打开的网站中将“raw.githubusercontent.com”复制到查询栏中进行搜索，可以看到域名对应的IP地址信息</span></span><br><span class="line">sudo vim /etc/hosts</span><br><span class="line">185.199.108.133       raw.githubusercontent.com</span><br><span class="line">185.199.109.133       raw.githubusercontent.com</span><br><span class="line">185.199.110.133       raw.githubusercontent.com</span><br><span class="line">185.199.111.133       raw.githubusercontent.com</span><br></pre></td></tr></table></figure></li>
+<li><p>打开远程桌面</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装xrdp</span></span><br><span class="line">sudo apt install xrdp</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果连接的时候是蓝屏，则讲用户从两个组中删掉</span></span><br><span class="line">sudo gpasswd -d peigen video</span><br><span class="line">sudo gpasswd -d peigen render</span><br><span class="line">sudo vim /etc/X11/xrdp/xorg.conf</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改 <span class="comment">#Option &quot;DRMDevice&quot; &quot;/dev/dri/renderD128&quot; 为 Option &quot;DRMDevice&quot; &quot;&quot;</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>Samba</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装Samba</span></span><br><span class="line">sudo apt install samba</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置 common-shell\RaspberryPi\smb.conf</span></span><br><span class="line">sudo vim /etc/samba/smb.conf</span><br><span class="line">sudo smbpasswd -a peigen</span><br><span class="line">sudo service smbd restart</span><br><span class="line">sudo service smbd status</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Monaco字体</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo cp ~/Downloads/Monaco.ttf /usr/share/fonts/truetype</span><br><span class="line">sudo mkfontscale</span><br><span class="line">sudo mkfontdir</span><br><span class="line">fc-cache -fv</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="三、常用软件"><a href="#三、常用软件" class="headerlink" title="三、常用软件"></a>三、常用软件</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Fndroid/clash_for_windows_pkg/releases">Clash</a></p>
+</li>
+<li><p>ZSH</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install zsh</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>安装Oh My Zsh</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https://gitee.com/Devkings/oh_my_zsh_install/raw/master/install.sh)&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>配置Zsh主题</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git $&#123;ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom&#125;/themes/powerlevel10k</span><br></pre></td></tr></table></figure></li>
+<li><p>配置.zshrc</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">加载配置</span></span><br><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/download#">VS Code</a>，下载Arm64</p>
+</li>
+<li><p>VIM</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>配置VIM</p>
+<ul>
+<li>Nutstore\Backup\Linux\config\ .vimrc</li>
+</ul>
+</li>
+<li><p>创建三个文件目录</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir .vim</span><br><span class="line">mkdir ~/.vim/files/</span><br><span class="line">mkdir ~/.vim/files/backup</span><br><span class="line">mkdir ~/.vim/files/swap</span><br><span class="line">mkdir ~/.vim/files/undo</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="四、开发软件"><a href="#四、开发软件" class="headerlink" title="四、开发软件"></a>四、开发软件</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://tomcat.apache.org/">Tomcat</a></li>
+<li><a target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi">Maven</a></li>
+<li><a target="_blank" rel="noopener" href="https://openjdk.org/">OpenJDK</a><ul>
+<li>[adoptium.net](<a target="_blank" rel="noopener" href="https://adoptium.net/zh-CN/temurin/releases/">Latest Releases | Adoptium</a>)</li>
+<li><a target="_blank" rel="noopener" href="https://www.azul.com/downloads/?package=jdk#download-openjdk">Zulu</a><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">tar  -zxvf OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.6_10.tar.gz -C ~/dev/</span><br><span class="line"># 配置java</span><br><span class="line">sudo update-alternatives --install /usr/bin/java java /home/peigen/dev/jdk-11.0.18+10/bin/java 1</span><br><span class="line">sudo update-alternatives --install /usr/bin/javac javac /home/peigen/dev/jdk-11.0.18+10/bin/javac 1</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --install /usr/bin/java java /home/peigen/dev/jdk-17.0.6+10/bin/java 1</span><br><span class="line">sudo update-alternatives --install /usr/bin/javac javac /home/peigen/dev/jdk-17.0.6+10/bin/javac 1</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --install /usr/bin/java java /home/peigen/dev/zulu11.62.17-ca-jdk11.0.18-linux_aarch64/bin/java 1</span><br><span class="line">sudo update-alternatives --install /usr/bin/javac javac /home/peigen/dev/zulu11.62.17-ca-jdk11.0.18-linux_aarch64/bin/javac 1</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --install /usr/bin/java java /home/peigen/dev/zulu17.40.19-ca-jdk17.0.6-linux_aarch64/bin/java 1</span><br><span class="line">sudo update-alternatives --install /usr/bin/javac javac /home/peigen/dev/zulu17.40.19-ca-jdk17.0.6-linux_aarch64/bin/javac 1</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --config java</span><br><span class="line">sudo update-alternatives --config javac</span><br></pre></td></tr></table></figure></li>
+<li></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.aarch64-nojdk.tar.gz">DBeaver</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://peigen.info/2023/02/18/2023/2023-2-18-Review-and-Plan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -201,7 +352,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-19 14:54:02" itemprop="dateModified" datetime="2023-02-19T14:54:02+08:00">2023-02-19</time>
+                <time title="修改时间：2023-02-27 15:28:22" itemprop="dateModified" datetime="2023-02-27T15:28:22+08:00">2023-02-27</time>
               </span>
 
           
@@ -334,7 +485,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -546,7 +697,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -622,7 +773,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -698,7 +849,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -775,7 +926,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -848,7 +999,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -926,7 +1077,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -999,7 +1150,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
+      <meta itemprop="name" content="培根">
       <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
     </span>
 
@@ -1047,88 +1198,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/05/08/2019/2019-5-8-Life-can-be-regretted-dont-leave-regret/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://peigen.info/2019/01/01/2019/2019-1-1-Review-and-Plan/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="Peigen Lee">
-      <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="从技术的角度做管理">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/01/01/2019/2019-1-1-Review-and-Plan/" class="post-title-link" itemprop="url">2018 Review & 2019 Plan</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-01-01T00:00:00+08:00">2019-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-18 09:08:50" itemprop="dateModified" datetime="2023-02-18T09:08:50+08:00">2023-02-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="http://pic.yupoo.com/peigen123_v/1bc9acf8/medium.jpg" alt="头号玩家"></p>
-<h1 id="一落千丈"><a href="#一落千丈" class="headerlink" title="一落千丈"></a>一落千丈</h1><p>今天看到尤长靖和锤科的新闻，促使我提前写下本文。</p>
-<h2 id="Review-2018"><a href="#Review-2018" class="headerlink" title="Review 2018"></a>Review 2018</h2><h3 id="工作篇"><a href="#工作篇" class="headerlink" title="工作篇"></a>工作篇</h3><p><strong>先Review2018的Plan吧：</strong></p>
-<ul>
-<li>在瑞骐复制易极付的成功，当然我还是希望兄弟们来帮帮忙滴</li>
-<li>团队管理：搭班子、带团队、定制度</li>
-<li>聚合支付以另一种形式继续下去，这个事儿在2-3年内有前途</li>
-</ul>
-<p>只能说在瑞骐，我是不成功的，毕竟经历的团队中Teamleader的反水，经历关键岗位没有backup的时候的关键人物离职，有真空期。</p>
-<p>团队建设了一半，勉强给自己打60分，由于公司的经营问题，本可以带出一只具备战斗力的团队，现在也只能作罢。</p>
-<p>聚合支付还在努力，继续努力……</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/01/01/2019/2019-1-1-Review-and-Plan/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1209,9 +1278,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Peigen Lee"
+    <img class="site-author-image" itemprop="image" alt="培根"
       src="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-  <p class="site-author-name" itemprop="name">Peigen Lee</p>
+  <p class="site-author-name" itemprop="name">培根</p>
   <div class="site-description" itemprop="description">我敢流浪也就不怕迷路疲惫危险</div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -1219,14 +1288,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
