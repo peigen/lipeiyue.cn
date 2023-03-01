@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">64</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -166,6 +166,101 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://peigen.info/2023/03/01/2023/2023-3-01-Raspberry-Pi-Study-note-prepare-work/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="培根">
+      <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="从技术的角度做管理">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/01/2023/2023-3-01-Raspberry-Pi-Study-note-prepare-work/" class="post-title-link" itemprop="url">树莓派学习笔记（二）---准备篇</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-01 00:00:00 / 修改时间：23:13:09" itemprop="dateCreated datePublished" datetime="2023-03-01T00:00:00+08:00">2023-03-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一、硬件准备"><a href="#一、硬件准备" class="headerlink" title="一、硬件准备"></a>一、硬件准备</h2><p>如果你跟我一样用的是树莓派，在开始学习前，请准备几个小东西，便于学习，或提高效率。</p>
+<p>以下整理出来的东西在淘宝上都有很多卖家。亦有整合包买。</p>
+<h3 id="1、GPIO扩展版"><a href="#1、GPIO扩展版" class="headerlink" title="1、GPIO扩展版"></a>1、GPIO扩展版</h3><ul>
+<li><img src="/uploads/RaspberryPi/prepare/GPIO.jpg" alt="img"></li>
+</ul>
+<h3 id="2、GPIO排线"><a href="#2、GPIO排线" class="headerlink" title="2、GPIO排线"></a>2、GPIO排线</h3><ul>
+<li><img src="/uploads/RaspberryPi/prepare/GPIO-Line.jpg" alt="img"></li>
+</ul>
+<h3 id="3、各种各样的杜邦线"><a href="#3、各种各样的杜邦线" class="headerlink" title="3、各种各样的杜邦线"></a>3、各种各样的杜邦线</h3><ul>
+<li>公对公<ul>
+<li><img src="/uploads/RaspberryPi/prepare/male2male.png" alt="公对公"></li>
+</ul>
+</li>
+<li>母对母<ul>
+<li><img src="/uploads/RaspberryPi/prepare/female2female.png" alt="母对母"></li>
+</ul>
+</li>
+<li>母对公<ul>
+<li><img src="/uploads/RaspberryPi/prepare/female2male.png" alt="母对公"></li>
+</ul>
+</li>
+</ul>
+<h3 id="4、发光二极管和电阻"><a href="#4、发光二极管和电阻" class="headerlink" title="4、发光二极管和电阻"></a>4、发光二极管和电阻</h3><ul>
+<li><img src="/uploads/RaspberryPi/prepare/diode.png" alt="diode"></li>
+<li>分别买发光二极管和电阻，也可以买途中这种直接串联的</li>
+</ul>
+<h3 id="5、37种传感器"><a href="#5、37种传感器" class="headerlink" title="5、37种传感器"></a>5、37种传感器</h3><ul>
+<li><img src="/uploads/RaspberryPi/prepare/sensor.png" alt="sensor"></li>
+<li>记得在淘宝店下载驱动和传感器说明哦。</li>
+</ul>
+<h2 id="二、软件准备"><a href="#二、软件准备" class="headerlink" title="二、软件准备"></a>二、软件准备</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">先更新软件包</span></span><br><span class="line">sudo apt-get update &amp; upgrade</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装WiringPi</span></span><br><span class="line">sudo apt-get install wiringpi</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">WiringPi安装完成后，可以使用下面的命令测试是否安装成功</span></span><br><span class="line">sudo gpio -v</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">执行后如下</span></span><br><span class="line">╭─ ~                                        peigen@peigen 22:50:22 ─╮</span><br><span class="line">╰─❯ sudo gpio -v                                                   ─╯</span><br><span class="line">gpio version: 2.61</span><br><span class="line">Copyright (c) 2012-2018 Gordon Henderson</span><br><span class="line">This is free software with ABSOLUTELY NO WARRANTY.</span><br><span class="line">For details type: gpio -warranty</span><br><span class="line"></span><br><span class="line">Raspberry Pi Details:</span><br><span class="line">  Type: Pi 4B, Revision: 05, Memory: 8192MB, Maker: Sony </span><br><span class="line">  * Device tree is enabled.</span><br><span class="line">  *--&gt; Raspberry Pi 4 Model B Rev 1.5</span><br><span class="line">  * This Raspberry Pi supports user-level GPIO access.</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">执行gpio readall 可以查看当前gpio口状态</span></span><br><span class="line">╭─ ~                                        peigen@peigen 22:51:22 ─╮</span><br><span class="line">╰─❯ gpio readall                                                   ─╯</span><br><span class="line">+-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+</span><br><span class="line"> | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |</span><br><span class="line"> +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+</span><br><span class="line"> |     |     |    3.3v |      |   |  1 || 2  |   |      | 5v      |     |     |</span><br><span class="line"> |   2 |   8 |   SDA.1 |   IN | 1 |  3 || 4  |   |      | 5v      |     |     |</span><br><span class="line"> |   3 |   9 |   SCL.1 |   IN | 1 |  5 || 6  |   |      | 0v      |     |     |</span><br><span class="line"> |   4 |   7 | GPIO. 7 |   IN | 1 |  7 || 8  | 1 | IN   | TxD     | 15  | 14  |</span><br><span class="line"> |     |     |      0v |      |   |  9 || 10 | 1 | IN   | RxD     | 16  | 15  |</span><br><span class="line"> |  17 |   0 | GPIO. 0 |   IN | 0 | 11 || 12 | 0 | IN   | GPIO. 1 | 1   | 18  |</span><br><span class="line"> |  27 |   2 | GPIO. 2 |   IN | 0 | 13 || 14 |   |      | 0v      |     |     |</span><br><span class="line"> |  22 |   3 | GPIO. 3 |   IN | 0 | 15 || 16 | 0 | IN   | GPIO. 4 | 4   | 23  |</span><br><span class="line"> |     |     |    3.3v |      |   | 17 || 18 | 0 | OUT  | GPIO. 5 | 5   | 24  |</span><br><span class="line"> |  10 |  12 |    MOSI |   IN | 0 | 19 || 20 |   |      | 0v      |     |     |</span><br><span class="line"> |   9 |  13 |    MISO |   IN | 0 | 21 || 22 | 0 | OUT  | GPIO. 6 | 6   | 25  |</span><br><span class="line"> |  11 |  14 |    SCLK |   IN | 0 | 23 || 24 | 1 | IN   | CE0     | 10  | 8   |</span><br><span class="line"> |     |     |      0v |      |   | 25 || 26 | 1 | IN   | CE1     | 11  | 7   |</span><br><span class="line"> |   0 |  30 |   SDA.0 |   IN | 1 | 27 || 28 | 1 | IN   | SCL.0   | 31  | 1   |</span><br><span class="line"> |   5 |  21 | GPIO.21 |   IN | 1 | 29 || 30 |   |      | 0v      |     |     |</span><br><span class="line"> |   6 |  22 | GPIO.22 |   IN | 1 | 31 || 32 | 0 | IN   | GPIO.26 | 26  | 12  |</span><br><span class="line"> |  13 |  23 | GPIO.23 |   IN | 0 | 33 || 34 |   |      | 0v      |     |     |</span><br><span class="line"> |  19 |  24 | GPIO.24 |   IN | 0 | 35 || 36 | 0 | IN   | GPIO.27 | 27  | 16  |</span><br><span class="line"> |  26 |  25 | GPIO.25 |   IN | 0 | 37 || 38 | 0 | IN   | GPIO.28 | 28  | 20  |</span><br><span class="line"> |     |     |      0v |      |   | 39 || 40 | 0 | IN   | GPIO.29 | 29  | 21  |</span><br><span class="line"> +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+</span><br><span class="line"> | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |</span><br><span class="line"> +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+</span><br></pre></td></tr></table></figure>
+
+<p>树莓派的物理引脚、BCM引脚和WiringPi引脚是三种不同的定义，下面这张图看起来更清晰美观一些：</p>
+<p><img src="/uploads/RaspberryPi/prepare/RPi4B-pinout.jpg" alt="RPi4B-pinout"></p>
+<p>当然，这里先不用死记硬背，以后有太多的机会翻出来复习，慢慢都会记得的。</p>
+<p>重点记得图中的3.3 Volts、5 Volts和GND的位置。3.3V、5V对应正极，GND对应负极。</p>
+<p>另外，我本身的技术栈是Java，理所应当在树莓派上也玩玩Java。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1151,81 +1246,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://peigen.info/2019/05/08/2019/2019-5-8-Life-can-be-regretted-dont-leave-regret/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E6%83%85%E4%BE%A3%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="培根">
-      <meta itemprop="description" content="我敢流浪也就不怕迷路疲惫危险">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="从技术的角度做管理">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/05/08/2019/2019-5-8-Life-can-be-regretted-dont-leave-regret/" class="post-title-link" itemprop="url">人生可以后悔，别留遗憾</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-05-08 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-08T00:00:00+08:00">2019-05-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-18 09:08:50" itemprop="dateModified" datetime="2023-02-18T09:08:50+08:00">2023-02-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://pic.yupoo.com/peigen123_v/97f1e0ab/c559630f.jpeg" alt="页首图"></p>
-<p>昨日，和周姐叙旧，每次我们都会聊到究竟是否后悔来到重庆。我的答案一直是不后悔。</p>
-<p>毕竟人生的旅途过程中的风景才是自个的，终点不是……又或者没有终点……至少我现在还看不到终点……</p>
-<p>关于后悔的话题，今早看到了这么一句话，也算是我一直以来的座右铭吧—[人生可以后悔，别留遗憾]……</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/05/08/2019/2019-5-8-Life-can-be-regretted-dont-leave-regret/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1297,7 +1317,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
